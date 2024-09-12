@@ -1,21 +1,12 @@
 const fizzbuzz = () => {
-    // write your code here
-    const num = 100
-    const numberArray = []
-
-    for (let i = 1; i <= num; i++) {
-        if ((i % 3 === 0) && (i % 5 === 0)) {
-            numberArray.push('FizzBuzz')
-        } else if (i % 5 === 0) {
-            numberArray.push('Buzz')
-        } else if (i % 3 === 0) {
-            numberArray.push('Fizz')
-        }
-        else {
-            numberArray.push(i)
-        }
-    }
-    return numberArray
-}
+    const num = 100;
+    return Array.from({ length: num }, (_, i) => {
+        i += 1;
+        if (i % 3 === 0 && i % 5 === 0) return 'FizzBuzz';
+        if (i % 5 === 0) return 'Buzz';
+        if (i % 3 === 0) return 'Fizz';
+        return i;
+    });
+};
 
 console.log(fizzbuzz())
