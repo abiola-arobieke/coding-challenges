@@ -1,18 +1,17 @@
 def fizzbuzz()
   result = []
-  
-  for num in 1..100
-    if (num % 3 == 0) & (num % 5 == 0)
-      result.push("FizzBuzz")
-    elsif num % 3 == 0
-      result.push("Fizz")
-    elsif num % 5 == 0
-      result.push("Buzz")
-    else
-      result.push(num)
+
+  (1..100).map do |num|
+      if num % 15 == 0
+        "FizzBuzz"
+      elsif num % 3 == 0
+        "Fizz"
+      elsif num % 5 == 0
+        "Buzz"
+      else
+        num
+      end
     end
   end
-  result
-end
 
 p fizzbuzz()
