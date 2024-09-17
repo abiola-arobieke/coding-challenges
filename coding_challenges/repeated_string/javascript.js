@@ -8,10 +8,9 @@ const repeatedString = (str, num) => {
             i += 1
         }
     } else {
-        word = ""
         return word;
     }
     return word;
 }
 
-console.log(repeatedString("Bola", 5))
+console.log(repeatedString("Bola", -1))
