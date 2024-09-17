@@ -13,4 +13,4 @@ const repeatedString = (str, num) => {
     return word;
 }
 
-console.log(repeatedString("Bola", -1))
+console.log(repeatedString("Bola", 5))
