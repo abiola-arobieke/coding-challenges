@@ -1,4 +1,4 @@
-const sum_odd_fibo_num = (num) => {
+const sumFiboNum = (num) => {
     i = 1;
     j = 0;
     odd_sum = 0;
