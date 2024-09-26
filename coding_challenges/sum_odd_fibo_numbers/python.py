@@ -7,10 +7,9 @@ def sumFiboSum(num):
         if (i % 2 != 0):
             odd_sum += i
 
-        i += j
-        j = i - j
+        i, j = i + j, i
 
     return odd_sum
 
 
-print(sumFiboSum(10))
+print(sumFiboSum(20))
