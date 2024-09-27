@@ -1,4 +1,4 @@
-def sumFiboSum(num):
+def sumFiboNum(num):
     i = 1
     j = 0
     odd_sum = 0
@@ -12,4 +12,4 @@ def sumFiboSum(num):
     return odd_sum
 
 
-print(sumFiboSum(20))
+print(sumFiboNum(20))
