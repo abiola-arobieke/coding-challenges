@@ -6,7 +6,7 @@ class Node:
 
     def __init__(self, data):
         self.data = data
-        self.pointer = None
+        self.next = None
 
 
 class LinkedList:
@@ -14,7 +14,7 @@ class LinkedList:
 
     def __init__(self):
         self.head = None
-        self.pointer = None
+        self.next = None
 
     def append(self, data):
         """A method for appending a node"""
@@ -25,10 +25,17 @@ class LinkedList:
         else:
             current = self
 
-            while current.pointer is not None:
-                current = current.pointer
+            while current.next is not None:
+                current = current.next
 
-            current.pointer = Node(data)
+            current.next = Node(data)
+
+    def prepend(self, data):
+        """A method for a new head to the linked list"""
+
+        new_head = Node(data)
+        new_head.next = self.head
+        self.head = data
 
 
 alphabet = LinkedList()
@@ -36,3 +43,6 @@ alphabet = LinkedList()
 alphabet.append('apple')
 alphabet.append('ball')
 alphabet.append('cat')
+alphabet.prepend("Alphabet learning")
+
+print(alphabet)
