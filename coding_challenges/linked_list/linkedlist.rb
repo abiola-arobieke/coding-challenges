@@ -7,7 +7,7 @@ class Node
   end
 end
 
-class LinkedList
+class StackLinkedList
   def initialize
     @head = nil
   end
@@ -43,15 +43,57 @@ class LinkedList
   end
 end
 
+class QueueLinkedList
+  @head = nil
 
-one = LinkedList.new()
+  def enqueue(data)
+    if @head.nil?
+      @head = Node.new(data)
+    else
+      current = @head
 
-one.push(1)
-one.push(2)
-one.push(3)
-one.push(4)
-one.push(5)
+      while current.next
+        current = current.next
+      end
 
-one.pop()
+      current.next = Node.new(data)
+    end
 
-p one
+  end
+
+  def dequue
+    if @head.nil?
+      "Queue is empty"
+    else
+      current = @head
+
+      @head.data = current.next.data
+      @head.next = current.next.next
+
+    end
+  end
+end
+
+
+# num = StackLinkedList.new()
+
+# num.push(1)
+# num.push(2)
+# num.push(3)
+# num.push(4)
+# num.push(5)
+
+# num.pop()
+
+# p num
+
+alphabet = QueueLinkedList.new()
+
+alphabet.enqueue('a')
+alphabet.enqueue('b')
+alphabet.enqueue('c')
+alphabet.enqueue('d')
+
+alphabet.dequue()
+
+p alphabet
